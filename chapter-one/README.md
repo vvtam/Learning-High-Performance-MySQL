@@ -52,4 +52,8 @@ MVCC，多版本并发控制，保存某个时间点的快照来实现
 
 存储引擎   
 frm文件存储表的定义   
-InnoDB的数据存储在表空间，表空间是InnoDB管理的一个黑盒子，是一系列的数据文件。    
+InnoDB的数据存储在表空间，表空间是InnoDB管理的一个黑盒子，是一系列的数据文件。      
+转换表的引擎   
+1.ALTER TABLE mytable ENGINE = InnoDB;     
+2.导出，导入创建表的时候修改引擎;   
+3.CREATE，然后INSERT...SELECT 数据量大了可以根据主键分批操作   Percona Toolkit 有工具 pt-online-schema-change    

@@ -1,2 +1,2 @@
-# learning_high_performance_mysql
-learning_high_performance_mysql
+# high performance mysql
+high performance mysql

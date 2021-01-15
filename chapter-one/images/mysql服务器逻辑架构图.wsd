@@ -1,0 +1,14 @@
+@startuml
+
+package "MySQL" {
+rectangle "连接/线程处理" as conn
+rectangle "查询缓存" as squ
+rectangle "解析器" as ana
+ana -left-> squ
+conn --> squ
+conn --> ana
+rectangle "优化器" as tun
+ana --> tun
+}
+
+@enduml

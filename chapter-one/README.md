@@ -1,17 +1,11 @@
-# 第一章
+# 第1章 MySQL架构与历史
+## 1.1 MySQL逻辑架构
+
 MySQL的存储引擎架构，查询处理，系统任务，数据存储、提取 分离   
 MySQL逻辑架构图
-```
-#        客户端            #                              
-#################################
-#    连接、线程处理         # 第一层   
 
-#  查询缓存    解析器       # 第二层
+![mysql服务器逻辑架构图](.\images\mysql服务器逻辑架构图.png)
 
-#        优化器            # 第二层
-#################################
-#      存 储 引 擎         # 第三层
-```
 第一层   
 连接处理，授权认证，安全
 
@@ -57,3 +51,43 @@ InnoDB的数据存储在表空间，表空间是InnoDB管理的一个黑盒子�
 1.ALTER TABLE mytable ENGINE = InnoDB;     
 2.导出，导入创建表的时候修改引擎;   
 3.CREATE，然后INSERT...SELECT 数据量大了可以根据主键分批操作   Percona Toolkit 有工具 pt-online-schema-change    
+
+### 1.1.1 连接管理和安全性
+
+### 1.1.2 优化与执行
+
+## 1.2 并发控制
+
+### 1.2.1 读写锁
+
+### 1.2.2 锁粒度
+
+## 1.3 事务
+
+```
+START TRANSACTION;
+SELECT XXX;
+UPDATE XXX;
+UPDATE XXX;
+COMMIT; [ROLLBACK;]
+```
+
+ACID，原子性（atomicity），一致性（consistency），隔离性（isolation），持久性（durability）。###
+
+### 1.3.1 隔离级别
+
+### 1.3.2 死锁
+
+### 1.3.3 事务日志
+
+### 1.3.4 MySQL 中的事务
+
+AUTOCOMMIT，或者ALTER TABLE，LOCK TABLES等语句触发自动提交
+
+设置隔离级别
+
+````
+SET TRANSACTION ISOLATION LEVEL READ COMMITED;
+SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
+在my.cnf配置
+````

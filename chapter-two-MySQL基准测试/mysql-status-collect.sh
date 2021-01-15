@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SQLHOST=
+SQLHOST=1.13.19.11
 SQLUSER=root
-SQLPW=123321
+SQLPW=mm
 INTERVAL=5
 PREFIX=$INTERVAL-sec-status
 RUNFILE=/home/benchmarks/running
